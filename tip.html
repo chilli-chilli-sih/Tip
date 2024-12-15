@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funded Tip Distribution</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+    <style>
+        /* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: rgb(34,29,135);
+    background: linear-gradient(90deg, rgba(34,29,135,1) 0%, rgba(51,7,89,1) 50%, rgba(177,0,199,1) 100%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #9b4eff; /* Purple */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #7a3ad1; /* Darker purple on hover */
+}
+
+input {
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 18px;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Container for the form and sections */
+div {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Wallet and Balance Information */
+#walletAddress {
+    font-size: 18px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+#balance {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#tipHistory {
+    margin-top: 20px;
+    padding-top: 10px;
+}
+
+/* Responsiveness for smaller screens */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+
+    input {
+        font-size: 16px;
+        width: 80%;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <h1>Funded Tip Distribution</h1>
+
+    <button id="connectWalletBtn">Connect Wallet</button>
+
+    <div id="walletAddress"></div>
+
+    <h3>Contract Balance</h3>
+    <div id="balance">Loading...</div>
+
+    <h3>Fund the Contract</h3>
+    <input type="number" id="fundAmount" placeholder="Amount to fund in ETH">
+    <button id="fundContractBtn">Fund Contract</button>
+
+    <h3>Tip a Provider</h3>
+    <input type="text" id="providerAddress" placeholder="Provider Address">
+    <input type="number" id="tipAmount" placeholder="Tip Amount in ETH">
+    <button id="sendTipBtn">Send Tip</button>
+
+    <script src="app.js"></script>
+</body>
+</html>
